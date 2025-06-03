@@ -1,23 +1,26 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import Converter from './Converter';
+import Converter2 from './Converter_v2';
 import './App.css';
 
 function App() {
+
+  const [version, setVersion] = useState(true)
+
+  function version1 () {
+    setVersion(true)
+  }
+
+  function version2 () {
+    setVersion(false)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Binary Converter App</h1>
+      <button onClick={version1}>Version 1</button>
+      <button onClick={version2}>Version 2</button>
+      {version ? <Converter></Converter> : <Converter2></Converter2>}
     </div>
   );
 }
