@@ -37,6 +37,7 @@ function Converter() {
     return (
         <div>
             <h2>Version 1</h2>
+            <p>Input either a decimal value or a binary value then click convert</p>
 
             <p>Input a decimal number: </p>
             <input type="text" value={decimalValue} onChange={handleValueInput} placeholder="Decimal Number" />
